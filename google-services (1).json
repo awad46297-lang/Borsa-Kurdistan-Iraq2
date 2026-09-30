@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "642158119236",
+    "project_id": "create-a-project-2e6ae",
+    "storage_bucket": "create-a-project-2e6ae.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:642158119236:android:f280c52a9c72f781bf6f11",
+        "android_client_info": {
+          "package_name": "com.iraqrates.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkRaWzv9qmYT8GcoHSHcyMe9G2sNp6vXc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
