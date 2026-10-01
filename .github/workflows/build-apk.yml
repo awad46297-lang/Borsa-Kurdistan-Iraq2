@@ -28,7 +28,19 @@ jobs:
         shell: bash
         run: |
           mkdir -p "$(dirname "settings.gradle.kts")"
-          echo "cGx1Z2luTWFuYWdlbWVudCB7CiAgICByZXBvc2l0b3JpZXMgewogICAgICAgIGdvb2dsZSgpCiAgICAgICAgbWF2ZW5DZW50cmFsKCkKICAgICAgICBncmFkbGVQbHVnaW5Qb3J0YWwoKQogICAgfQp9CmRlcGVuZGVuY3lSZXNvbHV0aW9uTWFuYWdlbWVudCB7CiAgICByZXBvc2l0b3JpZXNNb2RlLnNldChSZXBvc2l0b3JpZXNNb2RlLkZBSUxfT05fUFJPSkVDVF9SRVBPUykKICAgIHJlcG9zaXRvcmllcyB7CiAgICAgICAgZ29vZ2xlKCkKICAgICAgICBtYXZlbkNlbnRyYWwoKQogICAgfQp9CnJvb3RQcm9qZWN0Lm5hbWUgPSAiQm9yc2EtS3VyZGlzdGFuLUlyYXEiCmluY2x1ZGUoIjphcHAiKQo=" | base64 -d > "settings.gradle.kts"
+          echo "cGx1Z2luTWFuYWdlbWVudCB7CiAgICByZXBvc2l0b3JpZXMgewogICAgICAgIGdvb2dsZSgpCiAgICAgICAgbWF2ZW5DZW50cmFsKCkKICAgICAgICBncmFkbGVQbHVnaW5Qb3J0YWwoKQogICAgfQp9CmRlcGVuZGVuY3lSZXNvbHV0aW9uTWFuYWdlbWVudCB7CiAgICByZXBvc2l0b3JpZXNNb2RlLnNldChSZXBvc2l0b3JpZXNNb2RlLkZBSUxfT05fUFJPSkVDVF9SRVBPUykKICAgIHJlcG9zaXRvcmllcyB7CiAgICAgICAgZ29vZ2xlKCkKICAgICAgICBtYXZlbkNlbnRyYWwoKQogICAgfQp9CnJvb3RQcm9qZWN0Lm5hbWUgPSAiQm9yc2EtS3VyZGlzdGFuLUlyYXEiCmluY2x1ZGUoIjphcHAiKQo=" | base64 -d > "settings.gradle.kts"cat >> "app/build.gradle.kts" <<'EOF'
+
+android {
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
+EOF
           mkdir -p "$(dirname "build.gradle.kts")"
           echo "cGx1Z2lucyB7CiAgICBpZCgiY29tLmFuZHJvaWQuYXBwbGljYXRpb24iKSB2ZXJzaW9uICI4LjcuMyIgYXBwbHkgZmFsc2UKICAgIGlkKCJvcmcuamV0YnJhaW5zLmtvdGxpbi5hbmRyb2lkIikgdmVyc2lvbiAiMi4wLjIxIiBhcHBseSBmYWxzZQogICAgaWQoIm9yZy5qZXRicmFpbnMua290bGluLnBsdWdpbi5jb21wb3NlIikgdmVyc2lvbiAiMi4wLjIxIiBhcHBseSBmYWxzZQogICAgaWQoImNvbS5nb29nbGUuZ21zLmdvb2dsZS1zZXJ2aWNlcyIpIHZlcnNpb24gIjQuNC4yIiBhcHBseSBmYWxzZQp9Cg==" | base64 -d > "build.gradle.kts"
           mkdir -p "$(dirname "gradle.properties")"
